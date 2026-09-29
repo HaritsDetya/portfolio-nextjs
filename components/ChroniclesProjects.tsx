@@ -1,15 +1,14 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { 
-  Gamepad2, Film, BookOpen, Smartphone, 
-  ArrowUpRight, Sparkles, CheckCircle2, ShieldAlert, Compass 
+  Gamepad2, Film, BookOpen, 
+  ArrowUpRight, Sparkles, CheckCircle2, Compass 
 } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 interface ChronicleItem {
   id: string;
-  category: 'VAULT' | 'MOBILE';
   title: string;
   subtitle: string;
   description: string;
@@ -24,14 +23,11 @@ interface ChronicleItem {
 }
 
 export const ChroniclesProjects: React.FC = () => {
-  const [filter, setFilter] = useState<'ALL' | 'VAULT' | 'MOBILE'>('ALL');
-
   const chronicles: ChronicleItem[] = [
     {
       id: 'game-vault',
-      category: 'VAULT',
       title: 'GameVault',
-      subtitle: 'The Valhalla Log & Game Backlog Platform',
+      subtitle: 'The Valhalla Log & Game Backlog',
       description: 'Platform cloud pribadi untuk mendokumentasikan perjalanan bermain game lintas platform, panduan strategi boss, serta personal quest & achievement checklist.',
       inspiration: 'Lahir dari kecintaan pada survival adventure seperti Valheim dan mekanik game eksplorasi.',
       highlights: [
@@ -48,10 +44,9 @@ export const ChroniclesProjects: React.FC = () => {
     },
     {
       id: 'watch-vault',
-      category: 'VAULT',
       title: 'WatchVault',
       subtitle: 'The Lantern Cinema & Screen Chronicle',
-      description: 'Pelacak tontonan layar terpadu untuk film layar lebar, serial anime favorit, dan drama Asia (Drakor) dengan fitur penambahan cepat episode (+1 Ep).',
+      description: 'Pelacak tontonan layar terpadu untuk film bioskop, serial anime favorit, dan drama Asia (Drakor) dengan fitur penambahan cepat episode (+1 Ep).',
       inspiration: 'Menghargai seni penceritaan visual dari anime Jepang, sinema Korea, dan film layar lebar.',
       highlights: [
         'Integrasi The Movie Database (TMDB API) resolusi tinggi',
@@ -67,7 +62,6 @@ export const ChroniclesProjects: React.FC = () => {
     },
     {
       id: 'read-vault',
-      category: 'VAULT',
       title: 'ReadVault',
       subtitle: 'The Literature Pavilion (Manga • Manhwa • Manhua)',
       description: 'Perpustakaan digital untuk mengarsipkan bacaan Manga Jepang, Manhwa Korea, dan Manhua China dengan visual progress bar persentase chapter.',
@@ -83,30 +77,8 @@ export const ChroniclesProjects: React.FC = () => {
       accentBadge: 'bg-[#2a9d8f]/15 text-[#2a9d8f] border-[#2a9d8f]/30',
       borderGlow: 'hover:border-[#2a9d8f]/60',
       icon: BookOpen
-    },
-    {
-      id: 'mobile-systems',
-      category: 'MOBILE',
-      title: 'Smart Mobile & Android Solutions',
-      subtitle: 'The Digital Forge of TRPL UGM',
-      description: 'Pengembangan aplikasi mobile berbasis Android native dengan prinsip Clean Architecture MVVM, integrasi REST API, dan tata kelola basis data lokal yang tangguh.',
-      inspiration: 'Ditempa melalui perkuliahan dan proyek riset di Departemen Teknik Elektro & Teknologi Informasi UGM.',
-      highlights: [
-        'Android Jetpack Components, Kotlin Coroutines & Flow',
-        'Offline Caching dengan Room SQLite Database',
-        'Antarmuka modern responsif Material Design 3'
-      ],
-      techStack: ['Kotlin', 'Jetpack Compose', 'Retrofit', 'Room DB', 'Coroutines'],
-      githubUrl: 'https://github.com/HaritsDetya',
-      accentBadge: 'bg-[#81b29a]/15 text-[#81b29a] border-[#81b29a]/30',
-      borderGlow: 'hover:border-[#81b29a]/60',
-      icon: Smartphone
     }
   ];
-
-  const filteredItems = filter === 'ALL'
-    ? chronicles
-    : chronicles.filter(c => c.category === filter);
 
   return (
     <section id="chronicles" className="py-20 relative border-t border-white/5">
@@ -124,82 +96,48 @@ export const ChroniclesProjects: React.FC = () => {
             </span>
           </h2>
           <p className="text-[#b8bdab] text-xs sm:text-sm max-w-xl mt-3 leading-relaxed">
-            Arsip platform karya yang dibangun mandiri untuk mengorganisir riwayat petualangan, apresiasi seni layar, literatur komik Asia, dan aplikasi mobile.
+            Trilogi platform arsip digital pribadi yang dibangun mandiri untuk mengorganisir riwayat petualangan game, apresiasi sinema anime, dan literatur komik Asia.
           </p>
-
-          {/* Filter Tabs */}
-          <div className="flex items-center gap-2 mt-7 p-1.5 rounded-2xl bg-[#121820] border border-white/10">
-            <button
-              onClick={() => setFilter('ALL')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                filter === 'ALL'
-                  ? 'bg-gradient-to-r from-[#e07a5f] to-[#f4a261] text-[#0c1015] shadow-md shadow-[#e07a5f]/20'
-                  : 'text-[#b8bdab] hover:text-[#f4f1de]'
-              }`}
-            >
-              Semua Karya ({chronicles.length})
-            </button>
-            <button
-              onClick={() => setFilter('VAULT')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                filter === 'VAULT'
-                  ? 'bg-gradient-to-r from-[#e07a5f] to-[#f4a261] text-[#0c1015] shadow-md shadow-[#e07a5f]/20'
-                  : 'text-[#b8bdab] hover:text-[#f4f1de]'
-              }`}
-            >
-              Arsip Vaults (3)
-            </button>
-            <button
-              onClick={() => setFilter('MOBILE')}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-                filter === 'MOBILE'
-                  ? 'bg-gradient-to-r from-[#e07a5f] to-[#f4a261] text-[#0c1015] shadow-md shadow-[#e07a5f]/20'
-                  : 'text-[#b8bdab] hover:text-[#f4f1de]'
-              }`}
-            >
-              Mobile UGM (1)
-            </button>
-          </div>
         </div>
 
-        {/* Chronicles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredItems.map((item) => {
+        {/* 3-Column Chronicles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {chronicles.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.id}
-                className={`group relative rounded-3xl p-6 sm:p-7 glass-slate border border-white/10 ${item.borderGlow} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between overflow-hidden`}
+                className={`group relative rounded-3xl p-6 glass-slate border border-white/10 ${item.borderGlow} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col justify-between overflow-hidden`}
               >
                 <div>
                   {/* Top Bar: Icon, Title, Actions */}
-                  <div className="flex items-center justify-between gap-4 mb-4">
+                  <div className="flex items-start justify-between gap-3 mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-[#18222c] border border-white/10 flex items-center justify-center text-[#f4a261] group-hover:scale-105 transition-transform shadow-inner">
-                        <Icon className="w-6 h-6" />
+                      <div className="w-11 h-11 rounded-2xl bg-[#18222c] border border-white/10 flex items-center justify-center text-[#f4a261] group-hover:scale-105 transition-transform shadow-inner shrink-0">
+                        <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${item.accentBadge}`}>
-                          {item.category === 'VAULT' ? 'Cloud Sanctuary Vault' : 'TRPL UGM Mobile'}
+                        <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${item.accentBadge}`}>
+                          Cloud Sanctuary Vault
                         </span>
-                        <h3 className="text-xl font-bold text-[#f4f1de] mt-1 group-hover:text-[#f4a261] transition-colors">
+                        <h3 className="text-lg font-bold text-[#f4f1de] mt-0.5 group-hover:text-[#f4a261] transition-colors">
                           {item.title}
                         </h3>
                       </div>
                     </div>
 
                     {/* Action buttons */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 shrink-0">
                       {item.liveUrl && (
                         <a
                           href={item.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 px-3 rounded-xl bg-[#18222c] hover:bg-[#e07a5f] hover:text-[#0c1015] text-[#f4f1de] border border-white/10 transition-all flex items-center gap-1.5 text-xs font-bold shadow-sm"
+                          className="p-1.5 px-2.5 rounded-xl bg-[#18222c] hover:bg-[#e07a5f] hover:text-[#0c1015] text-[#f4f1de] border border-white/10 transition-all flex items-center gap-1 text-[11px] font-bold shadow-sm"
                           title="Buka Live Platform"
                         >
-                          <span>Live Demo</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
+                          <span>Live</span>
+                          <ArrowUpRight className="w-3 h-3" />
                         </a>
                       )}
                       {item.githubUrl && (
@@ -210,7 +148,7 @@ export const ChroniclesProjects: React.FC = () => {
                           className="p-2 rounded-xl bg-[#18222c] hover:bg-white/10 text-[#b8bdab] hover:text-[#f4f1de] border border-white/10 transition-all"
                           title="Lihat Source Code GitHub"
                         >
-                          <FaGithub className="w-4 h-4" />
+                          <FaGithub className="w-3.5 h-3.5" />
                         </a>
                       )}
                     </div>
@@ -219,22 +157,22 @@ export const ChroniclesProjects: React.FC = () => {
                   <p className="text-xs font-semibold text-[#f4a261] mb-1.5">
                     {item.subtitle}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#b8bdab] leading-relaxed mb-4">
+                  <p className="text-xs text-[#b8bdab] leading-relaxed mb-4">
                     {item.description}
                   </p>
 
                   {/* Soul/Inspiration note */}
-                  <div className="p-3 rounded-xl bg-[#0c1015]/60 border border-white/5 text-[11px] text-[#81b29a] italic mb-4 flex items-center gap-2">
-                    <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#f4a261]" />
-                    <span>&ldquo;{item.inspiration}&rdquo;</span>
+                  <div className="p-2.5 rounded-xl bg-[#0c1015]/60 border border-white/5 text-[11px] text-[#81b29a] italic mb-4 flex items-start gap-2">
+                    <Sparkles className="w-3.5 h-3.5 shrink-0 text-[#f4a261] mt-0.5" />
+                    <span className="leading-snug">&ldquo;{item.inspiration}&rdquo;</span>
                   </div>
 
                   {/* Highlights list */}
                   <div className="space-y-1.5 mb-5">
                     {item.highlights.map((h, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#f4f1de]">
+                      <div key={idx} className="flex items-start gap-1.5 text-xs text-[#f4f1de]">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#2a9d8f] shrink-0 mt-0.5" />
-                        <span>{h}</span>
+                        <span className="leading-snug">{h}</span>
                       </div>
                     ))}
                   </div>
@@ -245,7 +183,7 @@ export const ChroniclesProjects: React.FC = () => {
                   {item.techStack.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-lg bg-[#0c1015] border border-white/5 text-[11px] font-medium text-[#b8bdab]"
+                      className="px-2 py-0.5 rounded-lg bg-[#0c1015] border border-white/5 text-[10px] font-medium text-[#b8bdab]"
                     >
                       {tech}
                     </span>
