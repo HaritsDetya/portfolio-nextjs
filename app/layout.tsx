@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-const inter = Inter({ subsets: ["latin"] });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
-  title: "Muhammad Harits Detya Irawan — Software Engineering & Fullstack Developer",
-  description: "Portofolio Muhammad Harits Detya Irawan, mahasiswa Teknologi Rekayasa Perangkat Lunak UGM yang berfokus pada pengembangan aplikasi mobile, web, dan sistem berbasis cloud.",
+  title: "harits@portfolio:~$ — Muhammad Harits Detya Irawan",
+  description: "Software Engineering Student & Mobile Developer — Universitas Gadjah Mada. Passionate about building high-impact mobile and cloud applications.",
+  keywords: ["Muhammad Harits Detya Irawan", "software engineer", "mobile developer", "android", "kotlin", "next.js", "UGM"],
 };
 
 export default function RootLayout({
@@ -16,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className="dark" suppressHydrationWarning>
-      <body className={`${inter.className} bg-[#06090e] text-zinc-100 antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${jetbrainsMono.variable} font-mono bg-[#0a0a0f] text-[#bfc7d5] antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

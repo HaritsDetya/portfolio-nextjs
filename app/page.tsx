@@ -7,21 +7,21 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#06090e] flex flex-col justify-center items-center overflow-hidden mx-auto min-h-screen text-slate-100 selection:bg-emerald-500 selection:text-black">
-      {/* Floating Modern Navbar */}
+    <main className="relative bg-[#0a0a0f] flex flex-col justify-center items-center overflow-hidden mx-auto min-h-screen text-[#bfc7d5] selection:bg-[#c3e88d]/20 selection:text-[#c3e88d]">
+      {/* Terminal Window Tabs Navbar */}
       <Navbar />
 
       <div className="w-full">
-        {/* Hero Section */}
+        {/* Terminal Typewriter Shell Hero */}
         <Hero />
 
-        {/* Featured Projects Showcase */}
+        {/* Directory Listing Projects */}
         <Projects />
 
-        {/* Skills & Bento Grid Section */}
+        {/* Neofetch & Htop Skills Section */}
         <Skills />
 
-        {/* Footer */}
+        {/* Tmux/CLI Statusline Footer */}
         <Footer />
       </div>
     </main>

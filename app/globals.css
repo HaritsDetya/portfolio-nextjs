@@ -3,79 +3,103 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
-
-    --card: 224 71% 6%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 224 71% 5%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 160 84% 39%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 15%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 172 80% 40%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 217 33% 16%;
-    --input: 217 33% 16%;
-    --ring: 160 84% 39%;
-
-    --radius: 0.75rem;
-  }
-}
-
-@layer base {
   * {
-    @apply border-border !scroll-smooth;
+    @apply !scroll-smooth;
+    box-sizing: border-box;
   }
+
   body {
-    background-color: #06090e;
-    color: #f1f5f9;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: #0a0a0f;
+    color: #bfc7d5;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
   }
-  button {
-    @apply active:outline-none;
+
+  ::selection {
+    background: rgba(195, 232, 141, 0.2);
+    color: #c3e88d;
   }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0a0a0f; }
+  ::-webkit-scrollbar-thumb { background: #252535; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(195, 232, 141, 0.3); }
+
+  button { @apply active:outline-none; }
 }
 
 @layer utilities {
-  .heading {
-    @apply font-black text-3xl md:text-5xl text-center tracking-tight;
+  /* Terminal Color Utilities */
+  .t-prompt   { color: #82aaff; }
+  .t-path     { color: #c3e88d; }
+  .t-white    { color: #e4e4e4; }
+  .t-output   { color: #bfc7d5; }
+  .t-dim      { color: #4a4a6a; }
+  .t-green    { color: #c3e88d; }
+  .t-cyan     { color: #89ddff; }
+  .t-purple   { color: #c792ea; }
+  .t-amber    { color: #ffcb6b; }
+  .t-orange   { color: #f78c6c; }
+  .t-red      { color: #ff5370; }
+
+  /* Blinking cursor block */
+  .term-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 14px;
+    background: #c3e88d;
+    vertical-align: middle;
+    margin-left: 1px;
+    animation: term-blink 1.1s step-end infinite;
   }
 
-  .glass-card {
-    background: rgba(10, 15, 25, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  @keyframes term-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
   }
 
-  .glass-card-hover {
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .glass-card-hover:hover {
-    border-color: rgba(16, 185, 129, 0.4);
-    box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.15);
-    transform: translateY(-4px);
-  }
-
-  .text-glow {
-    text-shadow: 0 0 25px rgba(16, 185, 129, 0.45);
+  /* Terminal window surface */
+  .term-window {
+    background: #13131a;
+    border: 1px solid #252535;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px -10px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(255,255,255,0.04);
   }
 
-  .text-glow-cyan {
-    text-shadow: 0 0 25px rgba(6, 182, 212, 0.45);
+  /* Title bar of terminal window */
+  .term-titlebar {
+    background: #1a1a24;
+    border-bottom: 1px solid #252535;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+    user-select: none;
+  }
+
+  .term-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* Scanline overlay effect (subtle CRT) */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
   }
 }
