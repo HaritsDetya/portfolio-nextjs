@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Volume2, VolumeX, Music, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, Sparkles } from 'lucide-react';
+import { useChoiceNotice } from './ChoiceNotification';
 
 export const AudioLounge: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { notify } = useChoiceNotice();
   const audioCtxRef = useRef<AudioContext | null>(null);
   const intervalRef = useRef<any>(null);
 
@@ -53,6 +55,7 @@ export const AudioLounge: React.FC = () => {
     } else {
       setIsPlaying(true);
       playChime();
+      notify('Alunan Zen Chimes Yogyakarta berdering lembut.', 'skillcheck', 'COMPOSURE');
       intervalRef.current = setInterval(() => {
         playChime();
       }, 3500);

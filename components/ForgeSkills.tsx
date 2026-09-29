@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Hammer, Smartphone, Cloud, Database, Sparkles, Check, Copy, Heart, Scroll } from 'lucide-react';
+import { Hammer, Smartphone, Cloud, Database, Check, Copy, Scroll } from 'lucide-react';
+import { useChoiceNotice } from './ChoiceNotification';
 
 export const ForgeSkills: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { notify } = useChoiceNotice();
 
   const forgePillars = [
     {
@@ -33,6 +35,7 @@ export const ForgeSkills: React.FC = () => {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('haritsdetya@gmail.com');
     setCopied(true);
+    notify('Salin korespondensi email. Harits will remember that.', 'skillcheck', 'RHETORIC');
     setTimeout(() => setCopied(false), 2000);
   };
 

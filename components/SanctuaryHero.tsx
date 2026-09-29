@@ -1,33 +1,33 @@
 'use client';
 
 import React from 'react';
-import { Compass, Sparkles, Flame, Shield, BookOpen, Music, GraduationCap, ArrowDown } from 'lucide-react';
+import { Compass, Flame, BookOpen, GraduationCap, Dice5 } from 'lucide-react';
 
 export const SanctuaryHero: React.FC = () => {
   const personas = [
     {
       icon: Flame,
       title: 'Valheim Explorer',
-      desc: 'Survival & worldbuilding di rimba berkabut',
+      desc: 'Survival, hearth, & crafting di rimba berkabut',
       border: 'hover:border-[#e07a5f]/60',
       tagColor: 'text-[#e07a5f]',
       bgColor: 'bg-[#e07a5f]/10',
     },
     {
-      icon: BookOpen,
-      title: 'East Asian Lore',
-      desc: 'Pesona lanskap alam Jepang, Korea & Manhua',
-      border: 'hover:border-[#2a9d8f]/60',
-      tagColor: 'text-[#2a9d8f]',
-      bgColor: 'bg-[#2a9d8f]/10',
-    },
-    {
-      icon: Music,
-      title: 'Melodic Resonance',
-      desc: 'Fokus ditemani alunan J-Pop & Melodic EDM',
+      icon: Dice5,
+      title: 'Choice & Narrative Thinker',
+      desc: 'Disco Elysium & The Wolf Among Us: every choice matters',
       border: 'hover:border-[#f4a261]/60',
       tagColor: 'text-[#f4a261]',
       bgColor: 'bg-[#f4a261]/10',
+    },
+    {
+      icon: BookOpen,
+      title: 'East Asian Lore',
+      desc: 'Pesona lanskap alam Jepang, Korea & literatur Manhua',
+      border: 'hover:border-[#2a9d8f]/60',
+      tagColor: 'text-[#2a9d8f]',
+      bgColor: 'bg-[#2a9d8f]/10',
     },
     {
       icon: GraduationCap,
