@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Send, Mail, MapPin, ArrowUp, Flame, Music, Heart } from 'lucide-react';
+import { Send, MapPin, ArrowUp, Flame } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 export const SanctuaryFooter: React.FC = () => {
@@ -25,14 +25,14 @@ export const SanctuaryFooter: React.FC = () => {
                   <Flame className="w-4 h-4 text-[#f4a261]" />
                 </div>
               </div>
-              <h3 className="text-base font-bold text-[#f4f1de]">Muhammad Harits Detya Irawan</h3>
+              <h3 className="text-base font-bold text-[#f4f1de]">The Wanderer&apos;s Sanctuary</h3>
             </div>
             <p className="text-xs text-[#b8bdab] leading-relaxed mb-3">
-              Software Engineering Student di Universitas Gadjah Mada. Gemar menjelajahi dunia game survival, mendalami pesona alam Asia Timur, serta merancang arsitektur mobile dan cloud.
+              Software Engineering Student. Gemar menjelajahi dunia game survival, mendalami pesona alam Asia Timur, serta merancang arsitektur mobile dan cloud platform.
             </p>
             <div className="flex items-center gap-2 text-[11px] font-mono text-[#81b29a]">
               <MapPin className="w-3.5 h-3.5 text-[#e07a5f]" />
-              <span>Sleman, Daerah Istimewa Yogyakarta &bull; 7.79° S, 110.36° E</span>
+              <span>Daerah Istimewa Yogyakarta, Indonesia</span>
             </div>
           </div>
 
@@ -44,14 +44,14 @@ export const SanctuaryFooter: React.FC = () => {
                 <span>Send a Raven</span>
               </span>
               <p className="text-xs font-semibold text-[#f4f1de] mt-0.5">Mari berdiskusi atau berkolaborasi</p>
-              <a href="mailto:haritsdetya@gmail.com" className="text-xs text-[#81b29a] hover:underline font-mono">
-                haritsdetya@gmail.com
+              <a href="mailto:muhammadharitsdetyairawan@mail.ugm.ac.id" className="text-xs text-[#81b29a] hover:underline font-mono">
+                muhammadharitsdetyairawan@mail.ugm.ac.id
               </a>
             </div>
 
             <div className="flex items-center gap-2 mt-2 sm:mt-0">
               <a
-                href="mailto:haritsdetya@gmail.com"
+                href="mailto:muhammadharitsdetyairawan@mail.ugm.ac.id"
                 className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#e07a5f] to-[#f4a261] text-[#0c1015] font-bold text-xs shadow-md transition-all hover:opacity-95"
               >
                 Kirim Email
@@ -87,7 +87,7 @@ export const SanctuaryFooter: React.FC = () => {
 
         {/* Bottom Sub-row */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#b8bdab]">
-          <p>&copy; {new Date().getFullYear()} Muhammad Harits Detya Irawan. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Harits. All rights reserved.</p>
           <p className="flex items-center gap-1.5 text-[11px]">
             <span>Crafted in Yogyakarta with Next.js 16 &bull;</span>
             <span className="text-[#f4a261] flex items-center gap-1">

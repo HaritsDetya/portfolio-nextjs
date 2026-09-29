@@ -33,7 +33,7 @@ export const ForgeSkills: React.FC = () => {
   ];
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('haritsdetya@gmail.com');
+    navigator.clipboard.writeText('muhammadharitsdetyairawan@mail.ugm.ac.id');
     setCopied(true);
     notify('Salin korespondensi email. Harits will remember that.', 'skillcheck', 'RHETORIC');
     setTimeout(() => setCopied(false), 2000);

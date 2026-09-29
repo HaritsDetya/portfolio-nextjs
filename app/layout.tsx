@@ -18,9 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Harits Detya Irawan — The Wanderer's Sanctuary",
-  description: "Portofolio Muhammad Harits Detya Irawan — Mahasiswa TRPL UGM, penikmat petualangan survival, sastra Asia Timur, dan rekayasa perangkat lunak modern.",
-  keywords: ["Muhammad Harits Detya Irawan", "UGM", "Yogyakarta", "Software Engineering", "Mobile Developer", "Valheim", "Next.js"],
+  title: "The Wanderer's Sanctuary — Harits",
+  description: "Portofolio Harits — Penikmat petualangan survival, sastra Asia Timur, dan rekayasa perangkat lunak modern bernuansa Yogyakarta.",
+  keywords: ["Harits", "Yogyakarta", "Software Engineering", "Mobile Developer", "Valheim", "Next.js"],
 };
 
 export default function RootLayout({

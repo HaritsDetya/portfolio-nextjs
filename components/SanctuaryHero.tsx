@@ -31,8 +31,8 @@ export const SanctuaryHero: React.FC = () => {
     },
     {
       icon: GraduationCap,
-      title: 'TRPL UGM Artisan',
-      desc: 'Rekayasa perangkat lunak mobile & cloud di Jogja',
+      title: 'Software Artisan',
+      desc: 'Rekayasa perangkat lunak mobile & cloud bernuansa Jogja',
       border: 'hover:border-[#81b29a]/60',
       tagColor: 'text-[#81b29a]',
       bgColor: 'bg-[#81b29a]/10',
@@ -48,7 +48,7 @@ export const SanctuaryHero: React.FC = () => {
         {/* Top Origin Tag */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#18222c] border border-[#e07a5f]/30 text-xs font-semibold text-[#f4a261] mb-6 shadow-sm">
           <span className="w-2 h-2 rounded-full bg-[#e07a5f] animate-ping" />
-          <span>Yogyakarta, Indonesia &bull; Inspired by Nordic Mists & Asian Lore</span>
+          <span>The Wanderer&apos;s Sanctuary &bull; Inspired by Jogja, Nordic Mists & Asian Lore</span>
         </div>
 
         {/* Main Headline */}
@@ -65,9 +65,8 @@ export const SanctuaryHero: React.FC = () => {
 
         {/* Narrative Bio */}
         <p className="mt-5 text-sm sm:text-base md:text-lg text-[#b8bdab] max-w-2xl leading-relaxed">
-          Salam! Saya <strong className="text-[#f4f1de]">Muhammad Harits Detya Irawan</strong>. 
-          Mahasiswa Teknologi Rekayasa Perangkat Lunak di <span className="text-[#f4a261] font-semibold">Universitas Gadjah Mada (UGM)</span>. 
-          Merajut arsitektur aplikasi mobile native, platform cloud nir-server, dan repositori digital yang dijiwai oleh ketenangan alam Asia Timur, semangat petualangan survival, serta kehangatan tanah Yogyakarta.
+          Salam pengembara! Saya <strong className="text-[#f4f1de]">Harits</strong>. 
+          Mahasiswa Rekayasa Perangkat Lunak yang merajut arsitektur aplikasi mobile native, platform cloud nir-server, dan repositori digital yang dijiwai oleh ketenangan alam Asia Timur, semangat petualangan survival, serta kehangatan tanah Yogyakarta.
         </p>
 
         {/* Persona Cards Grid */}

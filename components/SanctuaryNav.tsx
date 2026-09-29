@@ -12,7 +12,7 @@ export const SanctuaryNav: React.FC = () => {
     const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
 
-    // Live clock in Yogyakarta time (WIB / UTC+7)
+    // Live clock in Western Indonesia Time (WIB)
     const updateTime = () => {
       const now = new Date();
       setTime(
@@ -58,10 +58,10 @@ export const SanctuaryNav: React.FC = () => {
           </div>
           <div className="hidden lg:flex flex-col text-left">
             <span className="text-xs font-bold text-[#f4f1de] group-hover:text-[#f4a261] transition-colors leading-none">
-              Harits Detya
+              Harits
             </span>
             <span className="text-[10px] text-[#81b29a] font-mono mt-0.5">
-              7.79° S, 110.36° E
+              Sanctuary Outpost
             </span>
           </div>
         </a>
@@ -83,7 +83,7 @@ export const SanctuaryNav: React.FC = () => {
           })}
         </div>
 
-        {/* Live Yogyakarta Time & Socials */}
+        {/* Live Western Indonesia Time & Socials */}
         <div className="flex items-center gap-2 pl-2 border-l border-white/10">
           {time && (
             <span className="hidden md:inline-flex items-center gap-1 text-[11px] font-mono text-[#81b29a] bg-[#18222c] px-2 py-0.5 rounded-md border border-white/5">
