@@ -1,28 +1,36 @@
 import React from "react";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
-import { Footer } from "@/components/Footer";
+import { AmbientFireflies } from "@/components/AmbientFireflies";
+import { AudioLounge } from "@/components/AudioLounge";
+import { SanctuaryNav } from "@/components/SanctuaryNav";
+import { SanctuaryHero } from "@/components/SanctuaryHero";
+import { ChroniclesProjects } from "@/components/ChroniclesProjects";
+import { ForgeSkills } from "@/components/ForgeSkills";
+import { SanctuaryFooter } from "@/components/SanctuaryFooter";
 
 export default function Home() {
   return (
-    <main className="relative bg-[#0a0a0f] flex flex-col justify-center items-center overflow-hidden mx-auto min-h-screen text-[#bfc7d5] selection:bg-[#c3e88d]/20 selection:text-[#c3e88d]">
-      {/* Terminal Window Tabs Navbar */}
-      <Navbar />
+    <main className="relative bg-[#0c1015] flex flex-col justify-center items-center overflow-hidden mx-auto min-h-screen text-[#f4f1de] selection:bg-[#e07a5f]/30 selection:text-[#f4f1de]">
+      {/* Ambient Canvas: Gentle Embers & Fireflies */}
+      <AmbientFireflies />
 
-      <div className="w-full">
-        {/* Terminal Typewriter Shell Hero */}
-        <Hero />
+      {/* Floating Audio Lounge (Zen Chimes / Soundwave) */}
+      <AudioLounge />
 
-        {/* Directory Listing Projects */}
-        <Projects />
+      {/* Sanctuary Top Navigation with Yogyakarta Live Clock */}
+      <SanctuaryNav />
 
-        {/* Neofetch & Htop Skills Section */}
-        <Skills />
+      <div className="w-full relative z-10">
+        {/* Hero Section: The Wanderer's Sanctuary */}
+        <SanctuaryHero />
 
-        {/* Tmux/CLI Statusline Footer */}
-        <Footer />
+        {/* Chronicles & Digital Vaults Showcase */}
+        <ChroniclesProjects />
+
+        {/* The Artisan's Forge: Technical Arsenal & Philosophy */}
+        <ForgeSkills />
+
+        {/* Send a Raven Footer */}
+        <SanctuaryFooter />
       </div>
     </main>
   );

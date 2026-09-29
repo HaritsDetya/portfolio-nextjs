@@ -3,103 +3,102 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-primary: #0c1015;
+    --bg-secondary: #121820;
+    --bg-tertiary: #18222c;
+    --border-subtle: rgba(244, 241, 222, 0.08);
+    --border-highlight: rgba(224, 122, 95, 0.35);
+
+    --terracotta: #e07a5f;
+    --amber-glow: #f4a261;
+    --jade-pine: #2a9d8f;
+    --sage: #81b29a;
+    --parchment: #f4f1de;
+    --parchment-muted: #b8bdab;
+  }
+
   * {
     @apply !scroll-smooth;
     box-sizing: border-box;
   }
 
   body {
-    background-color: #0a0a0f;
-    color: #bfc7d5;
-    font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
-    font-size: 14px;
+    background-color: var(--bg-primary);
+    color: var(--parchment);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   ::selection {
-    background: rgba(195, 232, 141, 0.2);
-    color: #c3e88d;
+    background: rgba(224, 122, 95, 0.3);
+    color: #f4f1de;
   }
 
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: #0a0a0f; }
-  ::-webkit-scrollbar-thumb { background: #252535; border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(195, 232, 141, 0.3); }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0c1015;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #24313d;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e07a5f;
+  }
 
-  button { @apply active:outline-none; }
+  button {
+    @apply active:outline-none;
+  }
 }
 
 @layer utilities {
-  /* Terminal Color Utilities */
-  .t-prompt   { color: #82aaff; }
-  .t-path     { color: #c3e88d; }
-  .t-white    { color: #e4e4e4; }
-  .t-output   { color: #bfc7d5; }
-  .t-dim      { color: #4a4a6a; }
-  .t-green    { color: #c3e88d; }
-  .t-cyan     { color: #89ddff; }
-  .t-purple   { color: #c792ea; }
-  .t-amber    { color: #ffcb6b; }
-  .t-orange   { color: #f78c6c; }
-  .t-red      { color: #ff5370; }
-
-  /* Blinking cursor block */
-  .term-cursor {
-    display: inline-block;
-    width: 8px;
-    height: 14px;
-    background: #c3e88d;
-    vertical-align: middle;
-    margin-left: 1px;
-    animation: term-blink 1.1s step-end infinite;
+  /* Sanctuary Glow & Gradient Utilities */
+  .bg-sanctuary {
+    background-color: #0c1015;
   }
 
-  @keyframes term-blink {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0; }
+  .glass-slate {
+    background: rgba(18, 24, 32, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(244, 241, 222, 0.08);
   }
 
-  /* Terminal window surface */
-  .term-window {
-    background: #13131a;
-    border: 1px solid #252535;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 32px 80px -10px rgba(0, 0, 0, 0.8),
-                0 0 0 1px rgba(255,255,255,0.04);
+  .glass-slate-hover {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-slate-hover:hover {
+    border-color: rgba(224, 122, 95, 0.4);
+    box-shadow: 0 16px 40px -10px rgba(224, 122, 95, 0.12),
+                0 0 20px -5px rgba(244, 162, 97, 0.1);
+    transform: translateY(-3px);
   }
 
-  /* Title bar of terminal window */
-  .term-titlebar {
-    background: #1a1a24;
-    border-bottom: 1px solid #252535;
-    display: flex;
-    align-items: center;
-    padding: 10px 16px;
-    gap: 8px;
-    user-select: none;
+  .text-terracotta {
+    color: #e07a5f;
+  }
+  .text-amber-glow {
+    color: #f4a261;
+  }
+  .text-jade {
+    color: #2a9d8f;
+  }
+  .text-sage {
+    color: #81b29a;
+  }
+  .text-parchment {
+    color: #f4f1de;
   }
 
-  .term-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+  .glow-flame {
+    text-shadow: 0 0 25px rgba(244, 162, 97, 0.45);
   }
-
-  /* Scanline overlay effect (subtle CRT) */
-  .scanlines::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      rgba(0,0,0,0.03) 2px,
-      rgba(0,0,0,0.03) 4px
-    );
-    pointer-events: none;
-    z-index: 1;
+  .glow-jade {
+    text-shadow: 0 0 25px rgba(42, 157, 143, 0.45);
   }
 }
