@@ -44,14 +44,14 @@ export const SanctuaryFooter: React.FC = () => {
                 <span>Send a Raven</span>
               </span>
               <p className="text-xs font-semibold text-[#f4f1de] mt-0.5">Mari berdiskusi atau berkolaborasi</p>
-              <a href="mailto:muhammadharitsdetyairawan@mail.ugm.ac.id" className="text-xs text-[#81b29a] hover:underline font-mono">
-                muhammadharitsdetyairawan@mail.ugm.ac.id
+              <a href="mailto:muhammadharitsdetyairawan2004@mail.ugm.ac.id" className="text-xs text-[#81b29a] hover:underline font-mono">
+                muhammadharitsdetyairawan2004@mail.ugm.ac.id
               </a>
             </div>
 
             <div className="flex items-center gap-2 mt-2 sm:mt-0">
               <a
-                href="mailto:muhammadharitsdetyairawan@mail.ugm.ac.id"
+                href="mailto:muhammadharitsdetyairawan2004@mail.ugm.ac.id"
                 className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#e07a5f] to-[#f4a261] text-[#0c1015] font-bold text-xs shadow-md transition-all hover:opacity-95"
               >
                 Kirim Email
